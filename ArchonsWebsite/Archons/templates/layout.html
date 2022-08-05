@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="{% static 'styles.css' %}" rel="stylesheet">
+    </head>
+    <body style="background-color:rgb(13,17,23)">
+        <div class="header">
+            <h1>Welcome to Archons' site!</h1>
+            <a href="/">Home</a>
+            <hr>
+        </div>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>
