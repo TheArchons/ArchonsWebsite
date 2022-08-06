@@ -1,10 +1,24 @@
 .header {
+    position: fixed;
     background-color:rgb(22, 27, 34);
     top:0;
     left:0;
     position:absolute;
     width:100%;
-    width: 100%;
+}
+
+.navlinks {
+    margin-left:3%;
+    font-size:1.5em;
+    text-decoration: none;
+}
+
+.navlinks:hover {
+    background-color: grey;
+}
+
+#title {
+    margin-left:5%;
 }
 
 a, p, h1 {
