@@ -8,4 +8,4 @@ def index(request):
     return render(request, 'index.html')
 
 def robots(request):
-    return render(request, 'templates/robots.txt')
+    return render(request, 'robots.txt')
