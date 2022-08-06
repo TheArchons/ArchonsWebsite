@@ -6,4 +6,5 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('robots.txt', views.robots, name='robots'),
     path('socials/', views.socials, name='socials'),
+    path('projects/', views.projects, name='projects'),
 ]

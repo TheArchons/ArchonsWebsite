@@ -10,3 +10,6 @@ def socials(request):
 
 def robots(request):
     return render(request, 'robots.txt')
+
+def projects(request):
+    return render(request, 'projects.html')

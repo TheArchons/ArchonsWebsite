@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block body %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Projects</title>
+    </head>
+    <body>
+        <h1 class="title">Projects</h1>
+        <p>Here are some of my projects, sorted by creation date</p>
+        <div class="buttonRow">
+            <a href="ArchonsWebsite/" class="largeButton">ArchonsWebsite</a>
+            <a href="cs11FinalProject" class="largeButton">cs11FinalProject</a>
+        </div>
+        <div class="buttonRow">
+            <a href="FileTransfer" class="largeButton">FileTransfer</a>
+            <a href="ISO8601ifier" class="largeButton">ISO8601ifier</a>
+        </div>
+        <div class="buttonRow">
+            <a href="Crinlist" class="largeButton">Crinlist</a>
+            <a href="WaterlooCCC" class="largeButton">Waterloo CCC</a>
+        </div>
+    </body>
+</html>
+{% endblock %}
