@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ISO8601ifier</title>
+    </head>
+    <body>
+        <h1 class="title">ISO8601ifier</h1>
+        <img src="{% static 'images/isoify.png' %}"/>
+        <p>I wanted to find a way to automatically standardize time formats, so I created a quick python program that helps perform automatic conversion. I learned how difficult dates and times are to manage in computer programs.</p>
+        <p>Created 01/04/2022</p>
+        <div class="buttonRow">
+            <a class="returnButton" href="https://github.com/TheArchons/ISO8601ifier">View on github</a>
+        </div>
+        <div class="buttonRow">
+            <a class="returnButton" href="/projects">Return</a>
+        </div>
+    </body>
+</html>
+{% endblock %}

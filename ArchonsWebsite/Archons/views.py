@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
@@ -17,5 +16,12 @@ def projects(request):
 class projectsClass():
     def ArchonsWebsite(request):
         return render(request, 'projects/ArchonsWebsite.html')
+
     def cs11FinalProject(request):
         return render(request, 'projects/cs11FinalProject.html')
+
+    def FileTransfer(request):
+        return render(request, 'projects/FileTransfer.html')
+    
+    def ISO8601ifier(request):
+        return render(request, 'projects/ISO8601ifier.html')

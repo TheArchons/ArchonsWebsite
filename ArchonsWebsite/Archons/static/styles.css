@@ -93,3 +93,7 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
+
+.sourceLink:hover {
+    color: lightblue;
+}
