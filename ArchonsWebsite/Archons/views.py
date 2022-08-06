@@ -13,3 +13,9 @@ def robots(request):
 
 def projects(request):
     return render(request, 'projects.html')
+
+class projectsClass():
+    def ArchonsWebsite(request):
+        return render(request, 'projects/ArchonsWebsite.html')
+    def cs11FinalProject(request):
+        return render(request, 'projects/cs11FinalProject.html')

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>cs11FinalProject</title>
+    </head>
+    <body>
+        <h1 class="title">cs11FinalProject</h1>
+        <img src="{% static 'images/cs11FinalProjectResized.png' %}" />
+        <p>I made this project as the capstone project for my cs11 class, where I made a Tic Tac Toe game in Python. I learned how to use tkinter to create GUIs, and I also learned how to create python http servers, which were used to host online multiplayer and global scoreboards.</p>
+        <p>Created 26/06/2022</p>
+        <div class="buttonRow">
+            <a class="returnButton" href="https://github.com/TheArchons/cs11FinalProject">View on github</a>
+        </div>
+        <div class="buttonRow">
+            <a class="returnButton" href="/projects">Return</a>
+        </div>
+    </body>
+</html>
+{% endblock %}
