@@ -25,3 +25,15 @@ class projectsClass():
     
     def ISO8601ifier(request):
         return render(request, 'projects/ISO8601ifier.html')
+    
+    def crinList(request):
+        return render(request, 'projects/crinList.html')
+
+    def yato(request):
+        return render(request, 'projects/yato.html')
+    
+    def leetCode(request):
+        return render(request, 'projects/leetcode.html')
+    
+    def WaterlooCCC(request):
+        return render(request, 'projects/WaterlooCCC.html')

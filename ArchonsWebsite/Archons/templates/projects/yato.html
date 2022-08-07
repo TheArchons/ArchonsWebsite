@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Yato</title>
+    </head>
+    <body>
+        <h1 class="title">Yato</h1>
+        <img src ="{% static 'images/yato.png' %}"/>
+        <p>A TODO list program that runs in the command line written in Python. With this project, I learned how to publish projects on to pypi, parse JSON files, write documentation, test driven development, parse .config files, and how to accept command line arguments.</p>
+        <p>Created 16/01/2022</p>
+        <div class="buttonRow">
+            <a class="returnButton" href="https://github.com/TheArchons/yato">View on github</a>
+        </div>
+        <div class="buttonRow">
+            <a class="returnButton" href="/projects">Return</a>
+        </div>
+    </body>
+</html>
+{% endblock %}

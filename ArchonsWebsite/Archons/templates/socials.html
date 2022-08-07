@@ -4,13 +4,12 @@
 {% load static %}
 <head>
     <title>FileTransfer</title>
-    <script src="{% static 'socials.js' %}"></script>
 </head>
 <body>
     <h1 class="title">Socials</h1>
     <p>Although I am not active on social media or have a very social life, I have listed a few of my socials and contacts below.</p>
     <div class="buttonRow">
-        <a href="" onclick="discordAlert()" class="largeButton">Discord</a>
+        <a href="" onclick="alert('Joseph Smith#0557');" class="largeButton">Discord</a>
         <a href="https://github.com/TheArchons" class="largeButton">Github</a>
     </div>
     <div class="buttonRow">
@@ -18,7 +17,7 @@
         <a href="mailto:alexli9138@gmail.com" class="largeButton">Email</a>
     </div>
     <div class="buttonRow">
-        <a onclick="redirectLink('https://www.youtube.com/watch?v=dQw4w9WgXcQ')" class="largeButton">TikTok</a> <!--Thanks 0x41*32 for the idea-->
+        <a onclick = "window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';" class="largeButton">TikTok</a> <!--Thanks 0x41*32 for the idea-->
     </div>
 </body>
 {% endblock %}
