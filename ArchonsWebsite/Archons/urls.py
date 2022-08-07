@@ -6,6 +6,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('robots.txt', views.robots, name='robots'),
     path('socials/', views.socials, name='socials'),
+    path('whoami/', views.whoami, name='whoami'),
 
     path('projects/', views.projects, name='projects'),
     path('projects/ArchonsWebsite/', views.projectsClass.ArchonsWebsite, name='socials_ArchonsWebsite'),

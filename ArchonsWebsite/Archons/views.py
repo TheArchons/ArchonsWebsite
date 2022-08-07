@@ -13,6 +13,9 @@ def robots(request):
 def projects(request):
     return render(request, 'projects.html')
 
+def whoami(request):
+    return render(request, 'whoami.html')
+
 class projectsClass():
     def ArchonsWebsite(request):
         return render(request, 'projects/ArchonsWebsite.html')

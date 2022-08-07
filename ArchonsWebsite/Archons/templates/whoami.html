@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block body %}
+{% load static %}
+<head>
+    <title>Who am I?</title>
+</head>
+<body>
+    <h1 class="title">Who am I?</h1>
+    <p>This page was created for an assignment in Career Life Education 10, where I have to share personal information answered below:</p>
+    <table>
+        <tr>
+            <th>Question</th>
+            <th>Answer</th>
+        </tr>
+        <tr>
+            <td>your dreams</td>
+            <td>I want to be a software developer, with a quiet and stable life, where I have the freedom to do what I want when not working.</td>
+        </tr>
+        <tr>
+            <td>your goals</td>
+            <td>A software developer in Big Tech (Facebook, Apple, Google, etc), and a master's in software engineering, preferably in a large Canadian or American university</td>
+        </tr>
+        <tr>
+            <td>your interests</td>
+            <td>Software development, computer hardware, integrated circuit manufacturing, high-end audio, gaming.</td>
+        </tr>
+        <tr>
+            <td>your skills</td>
+            <td>I am good at software development, building computers, general computer knowledge, and piano.</td>
+        </tr>
+        <tr>
+            <td>your values</td>
+            <td>Freedom, money, family/friends, knowledge, health.</td>
+        </tr>
+        <tr>
+            <td>your successes</td>
+            <td>I placed top 25% in the junior 2022 Waterloo Computing Competition, and won a bronze medal at the Canada-wide science fair. I also got a final mark of 100% in pre-calculus 11 while in grade 9</td>
+        </tr>
+        <tr>
+            <td>your achievements</td>
+            <td>I placed top 25% in the junior 2022 Waterloo Computing Competition, and won a bronze medal at the Canada-wide science fair. I also got a final mark of 100% in pre-calculus 11 while in grade 9</td>
+        </tr>
+        <tr>
+            <td>Learning Styles</td>
+            <td>
+                Visual Learner:
+                <span class="surveyColor1">Looking</span>
+                <span class="surveyColor2">Seeing</span>
+                &emsp;
+                <span class="visualColor">47% Visual</span>, 
+                <span class="auditoryColor">28% Auditory</span>, 
+                <span class="kinestheticColor">25% Kinesthetic</span> 
+                <img id="inlineImage" src="{% static 'images/Learning stylesResized.png' %}"/>
+            </td>
+        </tr>]
+        <tr>
+            <td>Personality</td>
+            <td>
+                ISTJ (The Inspector): 
+                <span class="surveyColor1">Introverted</span>, 
+                <span class="surveyColor2">Sensing</span>, 
+                <span class="surveyColor3">Thinking</span>, 
+                <span class="surveyColor4">Judging</span> </td>
+        </tr>
+        <tr>
+            <td>Interests</td>
+            <td>The Investigator: 
+                <span class="surveyColor1">Conventional</span>, <span class="surveyColor2">Investigative</span></td>
+        </tr>
+        <tr>
+            <td>Knowledge</td>
+            <td>
+                <ol>
+                    <li id="computerSurveyColor">Computers</li>
+                    <li class="surveyColor1">Mathematics</li>
+                    <li class="surveyColor2">Business</li>
+                </ol>
+            </td>
+        </tr>
+        <tr>
+            <td>Motivations</td>
+            <td>
+                <ol>
+                    <li class="surveyColor1">Recognition - Approval, and acknowledgement of achievements, service, and merit</li>
+                    <li class="surveyColor3">Independence - Thinking and acting for yourself, being free from the control of others</li>
+                    <li class="surveyColor2">Although this was not brought up during the survey, I believe money is also very motivating</li>
+                </ol>
+            </td>
+        </tr>
+    </table>
+</body>
+{% endblock %}

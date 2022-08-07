@@ -21,7 +21,7 @@
     margin-left:5%;
 }
 
-a, p, h1 {
+a, p, h1, table {
     font-family:Verdana,sans-serif;
     color: white
 }
@@ -96,4 +96,53 @@ img {
 
 .sourceLink:hover {
     color: lightblue;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+#inlineImage {
+    display: inline;
+}
+
+.kinestheticColor {
+    color: rgb(72, 237, 150);
+}
+
+.visualColor {
+    color: rgb(192, 105, 210);
+}
+
+.auditoryColor {
+    color: rgb(174, 194, 211);
+}
+
+.surveyColor1 {
+    color: rgb(161, 36, 16);
+}
+
+.surveyColor2 {
+    color: rgb(12, 121, 180);
+}
+
+.surveyColor3 {
+    color: rgb(160, 0, 0);
+}
+
+.surveyColor4 {
+    color: rgb(193, 103, 0);
+}
+
+#computerSurveyColor {
+    color: rgb(15, 156, 82);
 }
