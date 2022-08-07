@@ -1,0 +1,20 @@
+{% extends "filetransfer/layout.html" %}
+
+{% block body %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="{% static 'upload.js' %}"></script>
+        <title>Upload</title>
+    </head>
+    <body>
+        <h1>Upload file to share</h1>
+        <form enctype="multipart/form-data" action="/filetransfer/upload" method="post">
+            {%csrf_token%}
+            {{form}}
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
+{% endblock %}

@@ -2,41 +2,41 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'ArchonsWebsite/index.html')
 
 def socials(request):
-    return render(request, 'socials.html')
+    return render(request, 'ArchonsWebsite/socials.html')
 
 def robots(request):
-    return render(request, 'robots.txt')
+    return render(request, 'ArchonsWebsite/robots.txt')
 
 def projects(request):
-    return render(request, 'projects.html')
+    return render(request, 'ArchonsWebsite/projects.html')
 
 def whoami(request):
-    return render(request, 'whoami.html')
+    return render(request, 'ArchonsWebsite/whoami.html')
 
 class projectsClass():
     def ArchonsWebsite(request):
-        return render(request, 'projects/ArchonsWebsite.html')
+        return render(request, 'ArchonsWebsite/projects/ArchonsWebsite.html')
 
     def cs11FinalProject(request):
-        return render(request, 'projects/cs11FinalProject.html')
+        return render(request, 'ArchonsWebsite/projects/cs11FinalProject.html')
 
     def FileTransfer(request):
-        return render(request, 'projects/FileTransfer.html')
+        return render(request, 'ArchonsWebsite/projects/FileTransfer.html')
     
     def ISO8601ifier(request):
-        return render(request, 'projects/ISO8601ifier.html')
+        return render(request, 'ArchonsWebsite/projects/ISO8601ifier.html')
     
     def crinList(request):
-        return render(request, 'projects/crinList.html')
+        return render(request, 'ArchonsWebsite/projects/crinList.html')
 
     def yato(request):
-        return render(request, 'projects/yato.html')
+        return render(request, 'ArchonsWebsite/projects/yato.html')
     
     def leetCode(request):
-        return render(request, 'projects/leetcode.html')
+        return render(request, 'ArchonsWebsite/projects/leetcode.html')
     
     def WaterlooCCC(request):
-        return render(request, 'projects/WaterlooCCC.html')
+        return render(request, 'ArchonsWebsite/projects/WaterlooCCC.html')
