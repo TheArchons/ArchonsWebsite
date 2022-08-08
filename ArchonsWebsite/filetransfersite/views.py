@@ -9,7 +9,6 @@ from django.http import FileResponse
 from datetime import datetime
 
 directory_path = os.getcwd()
-url = 'http://127.0.0.1:8000/filetransfer/'
 
 # Create your views here.
 class fileUploadForm(forms.Form):
@@ -34,7 +33,7 @@ def upload(request):
             else:
                 return render(request, 'filetransfer/error.html', {'error': 'Error: File already exists'})
             encodedname = str(base64.b64encode(str(file).encode('utf-8')))[2:][:-1]
-            global url
+            url = 'http://' + request.get_host() + '/filetransfer/'
             print(encodedname)
             return render(request, 'filetransfer/uploaded.html', {'url' : url + 'confirmDownload/' + encodedname})
         else:
@@ -55,7 +54,7 @@ def confirmDownload(request, file_name):
     appendIP(request)
     print(file_name)
     file_name_decoded = base64.b64decode(file_name).decode('utf-8')
-    global url
+    url = 'http://' + request.get_host() + '/filetransfer/'
     return render(request, 'filetransfer/confirmDownload.html', {'downloadURL' : url + 'download/' + file_name, 'filename': file_name_decoded})
 
 def get_client_ip(request):
