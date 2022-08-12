@@ -1,0 +1,20 @@
+{% extends "ArchonsWebsite/layout.html" %}
+
+{% block body %}
+{% load static %}
+<head>
+    <title>WinLauncher</title>
+</head>
+<body>
+    <h1 class="title">WinLauncher</h1>
+    <img src ="{% static 'ArchonsWebsite/images/winlauncher.png' %}"/>
+    <p>This was a short project to create a program launcher in the terminal. My use case was to be able to quickly run games, but it may be used for any program. Written in C++ with the pdcurses library.<br><br>I learned how to write terminal applications with C++ and create UIs with pdcurses. I also learned how to interact with the Win32 API.</p>
+    <p>Created 09/08/2022</p>
+    <div class="buttonRow">
+        <a class="returnButton" href="https://github.com/TheArchons/WinLauncher">View on github</a>
+    </div>
+    <div class="buttonRow">
+        <a class="returnButton" href="/projects">Return</a>
+    </div>
+</body>
+{% endblock %}

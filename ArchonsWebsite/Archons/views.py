@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.conf import settings
 
 # Create your views here.
 def index(request):
@@ -17,6 +18,9 @@ def whoami(request):
     return render(request, 'ArchonsWebsite/whoami.html')
 
 class projectsClass():
+    def winLauncher(request):
+        return render(request, 'ArchonsWebsite/projects/winlauncher.html')
+
     def ArchonsWebsite(request):
         return render(request, 'ArchonsWebsite/projects/ArchonsWebsite.html')
 

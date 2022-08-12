@@ -9,6 +9,7 @@ urlpatterns = [
     path('whoami/', views.whoami, name='whoami'),
 
     path('projects/', views.projects, name='projects'),
+    path('projects/winlauncher/', views.projectsClass.winLauncher, name='winlauncher'),
     path('projects/ArchonsWebsite/', views.projectsClass.ArchonsWebsite, name='socials_ArchonsWebsite'),
     path('projects/cs11FinalProject/', views.projectsClass.cs11FinalProject, name='socials_cs11FinalProject'),
     path('projects/FileTransfer/', views.projectsClass.FileTransfer, name='socials_FileTransfer'),
