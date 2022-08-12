@@ -1,33 +1,7 @@
-.header {
-    position: fixed;
-    background-color:rgb(22, 27, 34);
-    top:0;
-    left:0;
-    position:absolute;
-    width:100%;
-}
-
-.navlinks {
-    margin-left:3%;
-    font-size:1.5vw;
-    text-decoration: none;
-}
-
-.navlinks:hover {
-    background-color: grey;
-}
-
-#home {
-    margin-left:5%;
-}
-
 a, p, h1, table {
     font-family:Verdana,sans-serif;
-    color: white
-}
-
-body {
-    margin-top: 6%;
+    color: white;
+    font-size: 1.3vw;
 }
 
 .title {
@@ -38,13 +12,12 @@ body {
 }
 
 p {
-    font-size:1.5vw;
     text-align: center;
 }
 
 .largeButton {
     font-size: 2.5vw;
-    background-color: rgb(22, 27, 34);
+    background-color: rgb(32, 33, 36);
     border: 2px;
     color: white;
     padding: 4% 13%;
@@ -59,6 +32,7 @@ p {
 .largeButton:hover {
     background-color: black;
     color: white;
+    text-decoration: none;
 }
 
 .buttonRow {
@@ -70,7 +44,7 @@ p {
 
 .returnButton {
     font-size: 2vw;
-    background-color: rgb(22, 27, 34);
+    background-color: rgb(32, 33, 36);
     border: 2px;
     color: white;
     padding: 2% 3%;
@@ -86,12 +60,17 @@ p {
 .returnButton:hover {
     background-color: black;
     color: white;
+    text-decoration: none;
 }
 
 img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.sourceLink {
+    text-decoration: underline;
 }
 
 .sourceLink:hover {
