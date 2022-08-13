@@ -35,7 +35,7 @@ def upload(request):
             encodedname = str(base64.b64encode(str(file).encode('utf-8')))[2:][:-1]
             url = 'https://' + request.get_host()
             print(encodedname)
-            return render(request, 'filetransfer/uploaded.html', {'url' : url + 'confirmDownload/' + encodedname})
+            return render(request, 'filetransfer/uploaded.html', {'url' : url + '/confirmDownload/' + encodedname})
         else:
             #print errors
             print(form.errors)
@@ -55,7 +55,7 @@ def confirmDownload(request, file_name):
     print(file_name)
     file_name_decoded = base64.b64decode(file_name).decode('utf-8')
     url = 'http://' + request.get_host()
-    return render(request, 'filetransfer/confirmDownload.html', {'downloadURL' : url + 'download/' + file_name, 'filename': file_name_decoded})
+    return render(request, 'filetransfer/confirmDownload.html', {'downloadURL' : url + '/download/' + file_name, 'filename': file_name_decoded})
 
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
