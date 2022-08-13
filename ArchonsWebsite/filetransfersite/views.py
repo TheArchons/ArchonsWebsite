@@ -16,7 +16,7 @@ class fileUploadForm(forms.Form):
 
 def index(request):
     appendIP(request)
-    return render(request, 'index.html')
+    return render(request, 'filetransfer/index.html')
 
 def upload(request):
     appendIP(request)
@@ -31,17 +31,17 @@ def upload(request):
                     for chunk in file.chunks():
                         destination.write(chunk)
             else:
-                return render(request, 'error.html', {'error': 'Error: File already exists'})
+                return render(request, 'filetransfer/error.html', {'error': 'Error: File already exists'})
             encodedname = str(base64.b64encode(str(file).encode('utf-8')))[2:][:-1]
-            url = 'https://' + request.get_host() + '/'
+            url = 'https://' + request.get_host()
             print(encodedname)
-            return render(request, 'uploaded.html', {'url' : url + 'confirmDownload/' + encodedname})
+            return render(request, 'filetransfer/uploaded.html', {'url' : url + 'confirmDownload/' + encodedname})
         else:
             #print errors
             print(form.errors)
-            return render(request, 'error.html', {'error': form.errors})
+            return render(request, 'filetransfer/error.html', {'error': form.errors})
     else:
-        return render(request, 'upload.html',
+        return render(request, 'filetransfer/upload.html',
             {'form': fileUploadForm()})
 
 def download(request, file_name):
@@ -54,8 +54,8 @@ def confirmDownload(request, file_name):
     appendIP(request)
     print(file_name)
     file_name_decoded = base64.b64decode(file_name).decode('utf-8')
-    url = 'https://' + request.get_host() + '/'
-    return render(request, 'confirmDownload.html', {'downloadURL' : url + 'download/' + file_name, 'filename': file_name_decoded})
+    url = 'http://' + request.get_host()
+    return render(request, 'filetransfer/confirmDownload.html', {'downloadURL' : url + 'download/' + file_name, 'filename': file_name_decoded})
 
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
