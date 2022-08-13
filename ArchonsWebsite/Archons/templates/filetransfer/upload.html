@@ -10,7 +10,7 @@
     </head>
     <body>
         <h1>Upload file to share</h1>
-        <form enctype="multipart/form-data" action="/filetransfer/upload" method="post">
+        <form enctype="multipart/form-data" action="/upload" method="post">
             {%csrf_token%}
             {{form}}
             <input type="submit" value="Submit">
