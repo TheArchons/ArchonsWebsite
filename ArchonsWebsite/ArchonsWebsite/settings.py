@@ -127,6 +127,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ROOT_HOSTCONF = 'Archons.hosts'
+ROOT_HOSTCONF = 'hosts'
 
 DEFAULT_HOST = 'www'
