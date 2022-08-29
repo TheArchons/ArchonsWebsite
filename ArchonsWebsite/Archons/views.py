@@ -1,46 +1,30 @@
 from django.shortcuts import render
 from django.conf import settings
 
-# Create your views here.
-def index(request):
-    return render(request, 'ArchonsWebsite/index.html')
 
-def socials(request):
-    return render(request, 'ArchonsWebsite/socials.html')
+def display(request):
+    links = {
+        '/': 'ArchonsWebsite/index.html',
+        '/socials/': 'ArchonsWebsite/socials.html',
+        '/projects/': 'ArchonsWebsite/projects.html',
+        '/whoami/': 'ArchonsWebsite/whoami.html',
+        '/projects/': 'ArchonsWebsite/projects.html',
+    }
+    return render(request, links[request.path])
 
-def robots(request):
-    return render(request, 'ArchonsWebsite/robots.txt')
 
-def projects(request):
-    return render(request, 'ArchonsWebsite/projects.html')
+def projectsDisplay(request):
+    links = {
+        '/winlauncher/': 'ArchonsWebsite/projects/winlauncher.html',
+        '/ArchonsWebsite/': 'ArchonsWebsite/projects/ArchonsWebsite.html',
+        '/cs11FinalProject/': 'ArchonsWebsite/projects/cs11FinalProject.html',
+        '/FileTransfer/': 'ArchonsWebsite/projects/FileTransfer.html',
+        '/ISO8601ifier/': 'ArchonsWebsite/projects/ISO8601ifier.html',
+        '/Crinlist/': 'ArchonsWebsite/projects/crinList.html',
+        '/yato/': 'ArchonsWebsite/projects/yato.html',
+        '/leetCode/': 'ArchonsWebsite/projects/leetcode.html',
+        '/WaterlooCCC/': 'ArchonsWebsite/projects/WaterlooCCC.html',
+    }
 
-def whoami(request):
-    return render(request, 'ArchonsWebsite/whoami.html')
-
-class projectsClass():
-    def winLauncher(request):
-        return render(request, 'ArchonsWebsite/projects/winlauncher.html')
-
-    def ArchonsWebsite(request):
-        return render(request, 'ArchonsWebsite/projects/ArchonsWebsite.html')
-
-    def cs11FinalProject(request):
-        return render(request, 'ArchonsWebsite/projects/cs11FinalProject.html')
-
-    def FileTransfer(request):
-        return render(request, 'ArchonsWebsite/projects/FileTransfer.html')
-    
-    def ISO8601ifier(request):
-        return render(request, 'ArchonsWebsite/projects/ISO8601ifier.html')
-    
-    def crinList(request):
-        return render(request, 'ArchonsWebsite/projects/crinList.html')
-
-    def yato(request):
-        return render(request, 'ArchonsWebsite/projects/yato.html')
-    
-    def leetCode(request):
-        return render(request, 'ArchonsWebsite/projects/leetcode.html')
-    
-    def WaterlooCCC(request):
-        return render(request, 'ArchonsWebsite/projects/WaterlooCCC.html')
+    # 9 is the length of '/projects'
+    return render(request, links[request.path[9:]])

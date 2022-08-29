@@ -1,22 +1,23 @@
 from django.shortcuts import render
 from django import forms
-from io import BytesIO
 import os
 from os.path import exists
 import base64
-from django.urls import path
 from django.http import FileResponse
 from datetime import datetime
 
 directory_path = os.getcwd()
 
+
 # Create your views here.
 class fileUploadForm(forms.Form):
     file = forms.FileField(label='Select a file')
 
+
 def index(request):
     appendIP(request)
     return render(request, 'filetransfer/index.html')
+
 
 def upload(request):
     appendIP(request)
@@ -35,14 +36,15 @@ def upload(request):
             encodedname = str(base64.b64encode(str(file).encode('utf-8')))[2:][:-1]
             url = 'https://' + request.get_host()
             print(encodedname)
-            return render(request, 'filetransfer/uploaded.html', {'url' : url + '/confirmDownload/' + encodedname})
+            return render(request, 'filetransfer/uploaded.html', {'url': url + '/confirmDownload/' + encodedname})
         else:
-            #print errors
+            # print errors
             print(form.errors)
             return render(request, 'filetransfer/error.html', {'error': form.errors})
     else:
         return render(request, 'filetransfer/upload.html',
-            {'form': fileUploadForm()})
+                      {'form': fileUploadForm()})
+
 
 def download(request, file_name):
     appendIP(request)
@@ -50,12 +52,14 @@ def download(request, file_name):
     print(file_name)
     return FileResponse(open(file_name, 'rb'))
 
+
 def confirmDownload(request, file_name):
     appendIP(request)
     print(file_name)
     file_name_decoded = base64.b64decode(file_name).decode('utf-8')
     url = 'http://' + request.get_host()
-    return render(request, 'filetransfer/confirmDownload.html', {'downloadURL' : url + '/download/' + file_name, 'filename': file_name_decoded})
+    return render(request, 'filetransfer/confirmDownload.html', {'downloadURL': url + '/download/' + file_name, 'filename': file_name_decoded})
+
 
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
@@ -64,6 +68,7 @@ def get_client_ip(request):
     else:
         ip = request.META.get('REMOTE_ADDR')
     return ip
+
 
 def appendIP(request):
     clientIP = get_client_ip(request)
