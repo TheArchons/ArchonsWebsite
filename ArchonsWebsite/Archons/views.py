@@ -7,7 +7,6 @@ def display(request):
         '/': 'ArchonsWebsite/index.html',
         '/socials/': 'ArchonsWebsite/socials.html',
         '/projects/': 'ArchonsWebsite/projects.html',
-        '/whoami/': 'ArchonsWebsite/whoami.html',
         '/projects/': 'ArchonsWebsite/projects.html',
     }
     return render(request, links[request.path])
