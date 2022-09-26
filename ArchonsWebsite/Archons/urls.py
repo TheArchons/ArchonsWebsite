@@ -16,5 +16,5 @@ urlpatterns = [
     path('projects/Crinlist/', views.projectsDisplay),
     path('projects/yato/', views.projectsDisplay),
     path('projects/leetCode/', views.projectsDisplay),
-    path('projects/WaterlooCCC/', views.projectsDisplay),
+    path('projects/CompetitiveProgramming/', views.projectsDisplay),
 ]

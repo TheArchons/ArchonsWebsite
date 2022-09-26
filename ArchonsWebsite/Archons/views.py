@@ -22,7 +22,7 @@ def projectsDisplay(request):
         '/Crinlist/': 'ArchonsWebsite/projects/crinList.html',
         '/yato/': 'ArchonsWebsite/projects/yato.html',
         '/leetCode/': 'ArchonsWebsite/projects/leetcode.html',
-        '/WaterlooCCC/': 'ArchonsWebsite/projects/WaterlooCCC.html',
+        '/CompetitiveProgramming/': 'ArchonsWebsite/projects/CompetitiveProgramming.html',
     }
 
     # 9 is the length of '/projects'
