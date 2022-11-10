@@ -50,7 +50,7 @@ def download(request, file_name):
     appendIP(request)
     file_name = base64.b64decode(file_name).decode('utf-8')
     print(file_name)
-    return FileResponse(open(file_name, 'rb'))
+    return FileResponse(open(file_name, 'rb'), as_attachment=True)
 
 
 def confirmDownload(request, file_name):
