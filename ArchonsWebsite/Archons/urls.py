@@ -18,4 +18,6 @@ urlpatterns = [
     path('projects/yato/', views.projectsDisplay),
     path('projects/leetCode/', views.projectsDisplay),
     path('projects/CompetitiveProgramming/', views.projectsDisplay),
+
+    path('yrbook/', views.yearbook),
 ]

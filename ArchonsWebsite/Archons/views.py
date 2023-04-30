@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.conf import settings
+from django.shortcuts import redirect
 
 
 def display(request):
@@ -28,3 +29,8 @@ def projectsDisplay(request):
 
     # 9 is the length of '/projects'
     return render(request, links[request.path[9:]])
+
+
+def yearbook(request):
+    redirect_url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ?autoplay=1"
+    return redirect(redirect_url)
