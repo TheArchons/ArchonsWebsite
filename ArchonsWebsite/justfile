@@ -1,5 +1,7 @@
 startOnlineFedora:
     cd /home/admin/ArchonsWebsite/ArchonsWebsite
+    git stash
     git pull
+    pip3 install requirements.txt -r
     sudo systemctl reload nginx
     nohup gunicorn ArchonsWebsite.wsgi:application --bind 0.0.0.0:8000
