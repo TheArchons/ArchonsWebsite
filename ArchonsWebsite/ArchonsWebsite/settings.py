@@ -32,6 +32,9 @@ DEBUG = env["DEBUG"]
 
 ALLOWED_HOSTS = env["ALLOWED_HOSTS"]
 
+# add csrf trusted origins if it exists
+if "CSRF_TRUSTED_ORIGINS" in env:
+    CSRF_TRUSTED_ORIGINS = env["CSRF_TRUSTED_ORIGINS"]
 
 # Application definition
 
