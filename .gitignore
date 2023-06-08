@@ -134,3 +134,6 @@ dmypy.json
 
 # Pycharm
 .idea/
+
+# ip.txt
+ip.txt
