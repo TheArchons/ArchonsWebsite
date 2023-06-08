@@ -62,7 +62,10 @@ MIDDLEWARE = [
     'django_hosts.middleware.HostsResponseMiddleware',
 ]
 
-ROOT_URLCONF = 'ArchonsWebsite.urls'
+if DEBUG:
+    ROOT_URLCONF = 'ArchonsWebsite.urls_debug'
+else:
+    ROOT_URLCONF = 'ArchonsWebsite.urls'
 
 TEMPLATES = [
     {
