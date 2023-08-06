@@ -5,6 +5,7 @@ from os.path import exists
 import base64
 from django.http import FileResponse
 from datetime import datetime
+from django.shortcuts import redirect
 
 directory_path = os.getcwd()
 
@@ -50,7 +51,12 @@ def download(request, file_name):
     appendIP(request)
     file_name = base64.b64decode(file_name).decode('utf-8')
     print(file_name)
-    return FileResponse(open(file_name, 'rb'), as_attachment=True)
+    # check if the file is within the allowed directory
+    file_path = os.path.abspath(file_name)
+    if "/ArchonsWebsite/ArchonsWebsite" in file_path:
+        return FileResponse(open(file_name, 'rb'), as_attachment=True)
+
+    return redirect("/")
 
 
 def confirmDownload(request, file_name):
