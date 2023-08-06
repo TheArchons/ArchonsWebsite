@@ -7,6 +7,7 @@ from django.http import FileResponse
 from datetime import datetime
 from django.shortcuts import redirect
 
+files_directory = os.getcwd() + "/files/"
 
 # Create your views here.
 class fileUploadForm(forms.Form):
@@ -26,7 +27,7 @@ def upload(request):
         if form.is_valid():
             file = form.cleaned_data['file']
             if not exists(str(file)):
-                with open(str(file), 'wb+') as destination:
+                with open(files_directory + str(file), 'wb+') as destination:
                     for chunk in file.chunks():
                         destination.write(chunk)
             else:
@@ -46,11 +47,11 @@ def upload(request):
 
 def download(request, file_name):
     appendIP(request)
-    file_name = base64.b64decode(file_name).decode('utf-8')
+    file_name = "files/" + base64.b64decode(file_name).decode('utf-8')
     print(file_name)
     # check if the file is within the allowed directory
     file_path = os.path.abspath(file_name)
-    if "/ArchonsWebsite/ArchonsWebsite" in file_path:
+    if "/ArchonsWebsite/ArchonsWebsite/files" in file_path:
         return FileResponse(open(file_name, 'rb'), as_attachment=True)
 
     return redirect("/")
