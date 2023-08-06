@@ -25,9 +25,9 @@ def upload(request):
         form = fileUploadForm(request.POST, request.FILES)
         print(request.FILES['file'].file)
         if form.is_valid():
-            file = form.cleaned_data['file']
-            if not exists(str(file)):
-                with open(files_directory + str(file), 'wb+') as destination:
+            file = files_directory + str(form.cleaned_data['file'])
+            if not exists(file):
+                with open(file, 'wb+') as destination:
                     for chunk in file.chunks():
                         destination.write(chunk)
             else:
