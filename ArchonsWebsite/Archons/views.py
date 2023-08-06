@@ -9,7 +9,7 @@ def display(request):
         '/socials/': 'ArchonsWebsite/socials.html',
         '/projects/': 'ArchonsWebsite/projects.html',
         '/whoami/': 'ArchonsWebsite/whoami.html',
-        '/projects/': 'ArchonsWebsite/projects.html',
+        '/projects/': 'ArchonsWebsite/projects.html'
     }
     return render(request, links[request.path])
 
@@ -34,3 +34,7 @@ def projectsDisplay(request):
 def yearbook(request):
     redirect_url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ?autoplay=1"
     return redirect(redirect_url)
+
+
+def robots(request):
+    return redirect("/static/ArchonsWebsite/robots.txt")
