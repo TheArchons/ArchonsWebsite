@@ -8,8 +8,8 @@
         <title>Confirm Download</title>
     </head>
     <body>
-        <h1>Click the link below to download {{filename}}</h1>
-        <a href="{{downloadURL}}">{{downloadURL}}</a>
+        <h1>Click the button below to download {{filename}}</h1>
+        <button onclick="window.location.replace('{{ file_dir }}');">Download</button>
     </body>
 </html>
 {% endblock %}

@@ -45,20 +45,13 @@ def upload(request):
         return render(request, 'filetransfer/upload.html',
                       {'form': fileUploadForm()})
 
-
-def download(request, file_name):
-    appendIP(request)
-    file_name = base64.b64decode(file_name).decode('utf-8')
-
-    return redirect("/static/filetransfer/files/" + file_name)
-
-
 def confirmDownload(request, file_name):
     appendIP(request)
     print(file_name)
     file_name_decoded = base64.b64decode(file_name).decode('utf-8')
+    file_directory = "/static/filetransfer/files/" + file_name_decoded
     url = 'http://' + request.get_host()
-    return render(request, 'filetransfer/confirmDownload.html', {'downloadURL': url + '/download/' + file_name, 'filename': file_name_decoded})
+    return render(request, 'filetransfer/confirmDownload.html', {'downloadURL': url + '/download/' + file_name, 'filename': file_name_decoded, 'file_dir': file_directory})
 
 
 def get_client_ip(request):
