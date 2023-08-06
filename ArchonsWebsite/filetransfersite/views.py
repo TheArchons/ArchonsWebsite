@@ -3,7 +3,7 @@ from django import forms
 import os
 from os.path import exists
 import base64
-from django.http import FileResponse
+from django.http import FileResponse, HttpResponse
 from datetime import datetime
 from django.shortcuts import redirect
 
@@ -48,12 +48,16 @@ def upload(request):
 
 def download(request, file_name):
     appendIP(request)
-    file_name = "files/" + base64.b64decode(file_name).decode('utf-8')
-    print(file_name)
+    file_name = base64.b64decode(file_name).decode('utf-8')
+    file_name_path = "files/" + file_name
+    print(file_name_path)
     # check if the file is within the allowed directory
-    file_path = os.path.abspath(file_name)
+    file_path = os.path.abspath(file_name_path)
     if "/ArchonsWebsite/ArchonsWebsite/files" in file_path:
-        return FileResponse(open(file_name, 'rb'), as_attachment=True)
+        print(file_name)
+        response = HttpResponse(open(file_name_path).read())
+        response['Content-Disposition'] = 'attachment; filename={}'.format(file_name)
+        return response
 
     return redirect("/")
 
