@@ -20,6 +20,11 @@ form {
     color: white;
 }
 
+.btn-outline-dark:hover {
+    background-color: white;
+    color: black;
+}
+
 .navitem {
     font-size: 1.3vw;
     margin-bottom: 0;
@@ -34,6 +39,12 @@ form {
     background-color: white;
     color: black;
     font-size: 1vw;
+}
+
+.submit-button:hover {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
 }
 
 .download-button {
