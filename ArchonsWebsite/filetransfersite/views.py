@@ -11,7 +11,7 @@ files_directory = os.getcwd() + "/Archons/static/filetransfer/files/"
 
 # Create your views here.
 class fileUploadForm(forms.Form):
-    file = forms.FileField(label='Select a file')
+    file = forms.FileField(label='')
 
 
 def index(request):

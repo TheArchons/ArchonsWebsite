@@ -1,15 +1,41 @@
-h1 {
-    color: white
+h1, input, p, body, .navitem {
+    color: white;
 }
 
-input {
-    color: white
+h1, h2 {
+    margin-left: 0.2em;
 }
 
-p {
-    color: white
+a {
+    margin-left: 0.4em;
 }
 
-body {
-    color: white
+form {
+    margin-left: 0.5em;
+}
+
+.navitem {
+    color: white;
+    font-size: 1.3vw;
+    margin-bottom: 0;
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-left: 0.2em;
+}
+
+.btn-outline-dark {
+    border: 2px solid grey;
+    background-color: black;
+}
+
+.submit-button {
+    margin-top: 1em;
+    background-color: white;
+    color: black;
+    font-size: 1vw;
+}
+
+.download-button {
+    margin-left: 0.5em;
 }
