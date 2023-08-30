@@ -2,7 +2,7 @@ h1, input, p, body, .navitem {
     color: white;
 }
 
-h1, h2 {
+h1, h2, h3 {
     margin-left: 0.2em;
 }
 
@@ -14,19 +14,19 @@ form {
     margin-left: 0.5em;
 }
 
-.navitem {
+.btn-outline-dark {
+    border: 2px solid white;
+    background-color: black;
     color: white;
+}
+
+.navitem {
     font-size: 1.3vw;
     margin-bottom: 0;
-    border-bottom: 0;
+    border-bottom: 0 solid;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     margin-left: 0.2em;
-}
-
-.btn-outline-dark {
-    border: 2px solid grey;
-    background-color: black;
 }
 
 .submit-button {
@@ -38,4 +38,9 @@ form {
 
 .download-button {
     margin-left: 0.5em;
+}
+
+#start-upload-button {
+    margin-top: 0.5em;
+    font-size: 1vw;
 }
