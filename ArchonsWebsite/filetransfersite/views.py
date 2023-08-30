@@ -52,17 +52,3 @@ def confirmDownload(request, file_name):
     file_directory = "/static/filetransfer/files/" + file_name_decoded
     url = 'http://' + request.get_host()
     return render(request, 'filetransfer/confirmDownload.html', {'downloadURL': url + '/download/' + file_name, 'filename': file_name_decoded, 'file_dir': file_directory})
-
-
-def get_client_ip(request):
-    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-    if x_forwarded_for:
-        ip = x_forwarded_for.split(',')[0]
-    else:
-        ip = request.META.get('REMOTE_ADDR')
-    return ip
-
-
-def appendIP(request):
-    clientIP = get_client_ip(request)
-    open('ip.txt', 'a').write(str(datetime.now()) + '    ' + clientIP + '\n')
