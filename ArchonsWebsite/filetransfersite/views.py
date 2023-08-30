@@ -15,12 +15,10 @@ class fileUploadForm(forms.Form):
 
 
 def index(request):
-    appendIP(request)
     return render(request, 'filetransfer/index.html')
 
 
 def upload(request):
-    appendIP(request)
     if request.method == "POST":
         form = fileUploadForm(request.POST, request.FILES)
         print(request.FILES['file'].file)
@@ -46,7 +44,6 @@ def upload(request):
                       {'form': fileUploadForm()})
 
 def confirmDownload(request, file_name):
-    appendIP(request)
     print(file_name)
     file_name_decoded = base64.b64decode(file_name).decode('utf-8')
     file_directory = "/static/filetransfer/files/" + file_name_decoded
