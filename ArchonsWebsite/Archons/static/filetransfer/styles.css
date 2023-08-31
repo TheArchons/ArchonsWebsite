@@ -55,3 +55,14 @@ form {
     margin-top: 0.5em;
     font-size: 1vw;
 }
+
+.page-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.page-footer-text {
+    font-size: 1vw;
+    text-align: center;
+}
