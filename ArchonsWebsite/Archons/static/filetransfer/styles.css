@@ -35,7 +35,6 @@ form {
 }
 
 .submit-button {
-    margin-top: 1em;
     background-color: white;
     color: black;
     font-size: 1vw;
@@ -65,4 +64,8 @@ form {
 .page-footer-text {
     font-size: 1vw;
     text-align: center;
+}
+
+.form-item {
+    margin-top: 0.7em;
 }

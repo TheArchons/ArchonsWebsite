@@ -11,8 +11,10 @@
         <h1>Upload file to share</h1>
         <form enctype="multipart/form-data" action="/upload" method="post">
             {%csrf_token%}
-            {{form}}
-            <input type="submit" value="Submit" class="btn btn-dark submit-button">
+            <div>
+                <div id="file-upload-box" class="form-item">{{ form.file }}</div>
+                <div id="submit" class="form-item"><input type="submit" value="Submit" class="btn btn-dark submit-button"></div>
+            </div>
         </form>
     </body>
 </html>
