@@ -25,11 +25,8 @@ def index(request):
 def upload(request):
     if request.method == "POST":
         form = fileUploadForm(request.POST, request.FILES)
-        print(request.FILES['file'].file)
         if form.is_valid():
             file = form.cleaned_data['file']
-
-            file_directory = files_directory + str(form.cleaned_data['file'])
 
             # Add the file to the database
             file_uuid = str(uuid.uuid4().hex)
