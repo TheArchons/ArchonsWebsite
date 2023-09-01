@@ -34,8 +34,9 @@ def upload(request):
             # Add the file to the database
             file_uuid = str(uuid.uuid4().hex)
             if form.cleaned_data['should_randomize_filename']:
-                # set the file name to the uuid, but keep the file extension
-                file.name = f"{str(file_uuid)}.{file.name.split('.')[-1]}"
+                # set the file name to the first 4 characters of the uuid (because it does not have to be unique,
+                # just random), but keep the file extension
+                file.name = f"{str(file_uuid)[:4]}.{file.name.split('.')[-1]}"
 
             file_name = str(form.cleaned_data['file'])
             file_data = File(uuid=file_uuid, name=file_name, uploaded_at=datetime.now())
