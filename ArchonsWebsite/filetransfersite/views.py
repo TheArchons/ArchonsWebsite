@@ -32,10 +32,7 @@ def upload(request):
             # Add the file to the database
             file_uuid = str(uuid.uuid4().hex)
             file_name = str(form.cleaned_data['file'])
-            password_protected = False
-            password_hash = ""
-            file_data = File(uuid=file_uuid, name=file_name, uploaded_at=datetime.now(),
-                             password_protected=password_protected, password_hash=password_hash)
+            file_data = File(uuid=file_uuid, name=file_name, uploaded_at=datetime.now())
             file_data.save()
 
             # Make the file directory
