@@ -6,8 +6,11 @@ import base64
 from django.http import FileResponse, HttpResponse
 from datetime import datetime
 from django.shortcuts import redirect
+import uuid
+from .models import File
 
 files_directory = os.getcwd() + "/Archons/static/filetransfer/files/"
+
 
 # Create your views here.
 class fileUploadForm(forms.Form):
@@ -25,16 +28,30 @@ def upload(request):
         if form.is_valid():
             file = form.cleaned_data['file']
             file_directory = files_directory + str(form.cleaned_data['file'])
-            if not exists(file_directory):
-                with open(file_directory, 'wb+') as destination:
-                    for chunk in file.chunks():
-                        destination.write(chunk)
-            else:
-                return render(request, 'filetransfer/error.html', {'error': 'Error: File already exists'})
-            encodedname = str(base64.b64encode(str(file).encode('utf-8')))[2:][:-1]
+
+            # Add the file to the database
+            file_uuid = str(uuid.uuid4().hex)
+            file_name = str(form.cleaned_data['file'])
+            password_protected = False
+            password_hash = ""
+            file_data = File(uuid=file_uuid, name=file_name, uploaded_at=datetime.now(),
+                             password_protected=password_protected, password_hash=password_hash)
+            file_data.save()
+
+            # Make the file directory
+            # We have to store it in the directory so the downloaded file has the same name as the uploaded file
+            file_directory = files_directory + file_uuid
+            os.makedirs(file_directory)
+
+            file_directory_and_name = f"{file_directory}/{file_name}"
+
+            # Save the file
+            with open(file_directory_and_name, 'wb+') as destination:
+                for chunk in file.chunks():
+                    destination.write(chunk)
+
             url = 'https://' + request.get_host()
-            print(encodedname)
-            return render(request, 'filetransfer/uploaded.html', {'url': url + '/confirmDownload/' + encodedname})
+            return render(request, 'filetransfer/uploaded.html', {'url': url + '/confirmDownload/' + file_uuid})
         else:
             # print errors
             print(form.errors)
@@ -43,9 +60,10 @@ def upload(request):
         return render(request, 'filetransfer/upload.html',
                       {'form': fileUploadForm()})
 
-def confirmDownload(request, file_name):
-    print(file_name)
-    file_name_decoded = base64.b64decode(file_name).decode('utf-8')
-    file_directory = "/static/filetransfer/files/" + file_name_decoded
-    url = 'http://' + request.get_host()
-    return render(request, 'filetransfer/confirmDownload.html', {'downloadURL': url + '/download/' + file_name, 'filename': file_name_decoded, 'file_dir': file_directory})
+
+def confirmDownload(request, file_uuid):
+    file_name = File.objects.get(uuid=file_uuid).name
+    download_url = f"/static/filetransfer/files/{file_uuid}/{file_name}"
+    upload_date = File.objects.get(uuid=file_uuid).uploaded_at
+    return render(request, 'filetransfer/confirmDownload.html',
+                  {'downloadURL': download_url, 'filename': file_name, 'uploadDate': upload_date})
