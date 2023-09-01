@@ -13,6 +13,7 @@
             {%csrf_token%}
             <div>
                 <div id="file-upload-box" class="form-item">{{ form.file }}</div>
+                <div id="should-randomize-filename-checkbox" class="form-item">Randomize filename {{ form.should_randomize_filename }}</div>
                 <div id="submit" class="form-item"><input type="submit" value="Submit" class="btn btn-dark submit-button"></div>
             </div>
         </form>

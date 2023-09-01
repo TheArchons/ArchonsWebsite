@@ -15,6 +15,7 @@ files_directory = os.getcwd() + "/Archons/static/filetransfer/files/"
 # Create your views here.
 class fileUploadForm(forms.Form):
     file = forms.FileField(label='')
+    should_randomize_filename = forms.BooleanField(required=False, initial=False)
 
 
 def index(request):
@@ -27,10 +28,15 @@ def upload(request):
         print(request.FILES['file'].file)
         if form.is_valid():
             file = form.cleaned_data['file']
+
             file_directory = files_directory + str(form.cleaned_data['file'])
 
             # Add the file to the database
             file_uuid = str(uuid.uuid4().hex)
+            if form.cleaned_data['should_randomize_filename']:
+                # set the file name to the uuid, but keep the file extension
+                file.name = f"{str(file_uuid)}.{file.name.split('.')[-1]}"
+
             file_name = str(form.cleaned_data['file'])
             file_data = File(uuid=file_uuid, name=file_name, uploaded_at=datetime.now())
             file_data.save()
