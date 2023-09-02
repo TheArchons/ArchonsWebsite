@@ -139,4 +139,4 @@ dmypy.json
 ip.txt
 
 # filetransfer uploads
-/ArchonsWebsite/files/
+/ArchonsWebsite/Archons/static/filetransfer/files/
