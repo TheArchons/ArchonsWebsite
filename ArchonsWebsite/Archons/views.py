@@ -41,8 +41,14 @@ def robots(request):
 
 def robot_test(request):
     # log ip to a file
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+
     with open("ArchonsWebsite/ips.txt", "a") as f:
-        f.write(request.META.get('REMOTE_ADDR') + "\n")
+        f.write(ip + "\n")
     
     redirect_url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ?autoplay=1"
     return redirect(redirect_url)
