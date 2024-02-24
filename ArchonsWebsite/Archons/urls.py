@@ -19,6 +19,7 @@ urlpatterns = [
     path('projects/CompetitiveProgramming/', views.projectsDisplay),
 
     path('yrbook/', views.yearbook),
+    path('robot_test/', views.robot_test),
 
     path('robots.txt', views.robots)
 ]

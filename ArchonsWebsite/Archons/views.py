@@ -38,3 +38,11 @@ def yearbook(request):
 
 def robots(request):
     return redirect("/static/ArchonsWebsite/robots.txt")
+
+def robot_test(request):
+    # log ip to a file
+    with open("ArchonsWebsite/ips.txt", "a") as f:
+        f.write(request.META.get('REMOTE_ADDR') + "\n")
+    
+    redirect_url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ?autoplay=1"
+    return redirect(redirect_url)
