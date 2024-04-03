@@ -1,0 +1,2 @@
+class ProfileEntry < ApplicationRecord
+end
