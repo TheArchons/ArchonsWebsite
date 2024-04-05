@@ -23,5 +23,8 @@ module ArchonsWebsite
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # add dev.thearchons.xyz to the list of allowed hosts
+    config.hosts << "dev.thearchons.xyz"
   end
 end
