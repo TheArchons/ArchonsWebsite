@@ -51,7 +51,7 @@ def yearbook(request):
 
 
 def robots(request):
-    return redirect("/static/ArchonsWebsite/robots.txt")
+    return render(request, 'ArchonsWebsite/robots.txt', content_type='text/plain')
 
 def robot_test(request):
     # log ip to a file
