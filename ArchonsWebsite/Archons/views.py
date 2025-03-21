@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.conf import settings
 from django.shortcuts import redirect
-
+from django.http import HttpResponse
 
 def display(request, event=None):
     links = {
@@ -51,7 +51,11 @@ def yearbook(request):
 
 
 def robots(request):
-    return render(request, 'ArchonsWebsite/robots.txt', content_type='text/plain')
+    # read content from file ArchonsWebsite/Archons/static/ArchonsWebsite/robots.txt
+    with open("Archons/static/ArchonsWebsite/robots.txt", "r") as f:
+        content = f.read()
+
+    return HttpResponse(content, content_type="text/plain")
 
 def robot_test(request):
     # log ip to a file
