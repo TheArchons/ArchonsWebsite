@@ -3,14 +3,18 @@ from django.conf import settings
 from django.shortcuts import redirect
 
 
-def display(request):
+def display(request, event=None):
     links = {
         '/': 'ArchonsWebsite/index.html',
         '/socials/': 'ArchonsWebsite/socials.html',
         '/projects/': 'ArchonsWebsite/projects.html',
-        '/whoami/': 'ArchonsWebsite/whoami.html',
-        '/projects/': 'ArchonsWebsite/projects.html'
+        '/projects/': 'ArchonsWebsite/projects.html',
+        '/whoami/': 'ArchonsWebsite/whoami.html'
     }
+
+    if '/whoami' in request.path and event is not None:
+        return render(request, f'ArchonsWebsite/whoami/{event}.html')
+
     return render(request, links[request.path])
 
 

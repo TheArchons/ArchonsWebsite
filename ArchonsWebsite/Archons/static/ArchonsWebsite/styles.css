@@ -1,4 +1,4 @@
-a, p, h1, table {
+a, p, h1, table, h2, h3 {
     font-family:Verdana,sans-serif;
     color: white;
     font-size: 1.3vw;
@@ -53,6 +53,7 @@ p {
     display: inline-block;
     box-sizing: border-box;
     margin-left: 1%;
+    margin-bottom: 3%;
     width: 20%;
     justify-content: center;
 }
@@ -124,4 +125,12 @@ td, th {
 
 #computerSurveyColor {
     color: rgb(15, 156, 82);
+}
+
+.img-group {
+    margin-bottom: 3%;
+}
+
+h3 {
+    text-align: center;
 }
