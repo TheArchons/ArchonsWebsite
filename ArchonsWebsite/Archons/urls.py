@@ -5,10 +5,6 @@ from . import views
 urlpatterns = [
     path('', views.display, name='index'),
     path('socials/', views.display),
-    
-    path('whoami/', views.display),
-    path('whoami/<str:event>', views.display),
-
     path('projects/', views.display, name='projects'),
     path('projects/winlauncher/', views.projectsDisplay),
     path('projects/ArchonsWebsite/', views.projectsDisplay),
